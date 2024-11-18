@@ -1,4 +1,6 @@
 /*
+NOTE: REMEMBER TO ADD standalone: true TO THE @Component PORTION TO AVOID AN IMPORT ERROR
+
 HELLO WORLD/SETUP
 THEORY/SUMMARY:
 Summary: In this lesson, you updated a default Angular app to display Hello world.

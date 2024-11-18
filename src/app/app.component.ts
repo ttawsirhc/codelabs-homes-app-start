@@ -1,22 +1,23 @@
 import { Component } from '@angular/core';
-import {HomeComponent} from './home/home.component';
+import { HomeComponent } from './home/home.component';
+import { RouterModule, RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   standalone: true,
+  imports: [HomeComponent, RouterLink, RouterOutlet],
   template: `
-  <main>
-    <header class="brand-name">
-      <img class="brand-logo" src="/assets/logo.svg" alt="logo" aria-hidden="true" />
-    </header>
-    <section>
-      <form>
-        <input type="text" placeholder="Filter by city" />
-        <button class="primary" type="button">Search</button>
-      </form>
-    </section>
-  </main>
-  `,
+    <main>
+      <a [routerLink]="['/']">
+        <header class="brand-name">
+          <img class="brand-logo" src="/assets/logo.svg" alt="logo" aria-hidden="true" />
+        </header>
+      </a>
+      <section class="content">
+        <router-outlet></router-outlet>
+      </section>
+    </main>
+  `,  
   // template: `<h1>Hello World!</h1>`,
   /*
   template: `
@@ -24,16 +25,25 @@ import {HomeComponent} from './home/home.component';
     <header class="brand-name">
       <img class="brand-logo" src="/assets/logo.svg" alt="logo" aria-hidden="true" />
     </header>
+  </main>
+  `,
+  */
+  /*
+  imports: [HomeComponent, RouterModule, RouterLink, RouterOutlet],
+  template: `
+  <main>
+    <header class="brand-name">
+      <img class="brand-logo" src="/assets/logo.svg" alt="logo" aria-hidden="true" />
+    </header>
     <section class="content">
-      <app-home>
-      </app-home>
+      <router-outlet></router-outlet>
+      <!-- <app-home></app-home> -->
     </section>
   </main>
   `,
   */
   styleUrls: ['./app.component.css'],
-  imports: [HomeComponent],
-})
+}) // end @Component
 export class AppComponent {
-  title = 'homes';
-}
+  title = 'homes'; // original: title = 'default';
+} // end class AppComponent

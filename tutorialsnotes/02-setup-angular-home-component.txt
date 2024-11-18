@@ -1,4 +1,6 @@
 /*
+NOTE: REMEMBER TO ADD standalone: true TO THE @Component PORTION TO AVOID AN IMPORT ERROR
+
 CREATE HOME COMPONENT
 THEORY/SUMMARY:
 Summary: In this lesson, you created a new component for your app and gave it a filter edit control and button.
@@ -36,7 +38,7 @@ I. Open app.component.ts in the editor.
 II. In app.component.ts, import HomeComponent by adding this line to the file level imports:
 III. Import HomeComponent in src/app/app.component.ts: import {HomeComponent} from './home/home.component';
 C. In app.component.ts, in @Component, update the imports array property and add HomeComponent.
-I. Replace in src/app/app.component.ts: imports: [HomeComponent],
+I. Replace in src/app/app.component.ts: imports: [HomeComponent], (also remember standalone: true)
 D. In app.component.ts, in @Component, update the template property to include the following HTML code:
 I. Replace in src/app/app.component.ts:
 template: `
